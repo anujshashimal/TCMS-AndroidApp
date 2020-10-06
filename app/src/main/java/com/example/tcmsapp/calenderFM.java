@@ -21,7 +21,8 @@ public class calenderFM extends Fragment{
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
        View view = inflater.inflate(R.layout.fragment_calender_f_m,container,false);
        ImageView imageView = view.findViewById(R.id.std);
-       ImageView todoTask = view.findViewById(R.id.todoTask);
+       ImageView todoTask = view.findViewById(R.id.dtodotask);
+       ImageView incomeExpBtn = view.findViewById(R.id.incomeExpBtn);
 
        ImageView batches = view.findViewById(R.id.batches);
        batches.setOnClickListener(new View.OnClickListener() {
@@ -29,6 +30,24 @@ public class calenderFM extends Fragment{
            public void onClick(View v) {
                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
                fragmentTransaction.replace(R.id.contrainer,new batchesfragment());
+               fragmentTransaction.commit();
+           }
+       });
+       ImageView enquery = view.findViewById(R.id.enquery);
+        enquery.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+               fragmentTransaction.replace(R.id.contrainer,new enqueryOptions());
+               fragmentTransaction.commit();
+           }
+       });
+        ImageView staff = view.findViewById(R.id.staff);
+        staff.setOnClickListener(new View.OnClickListener() {
+           @Override
+           public void onClick(View v) {
+               FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+               fragmentTransaction.replace(R.id.contrainer,new staffMain());
                fragmentTransaction.commit();
            }
        });
@@ -51,6 +70,15 @@ public class calenderFM extends Fragment{
             }
         });
 
+        incomeExpBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.contrainer,new incomeAndExp());
+                fragmentTransaction.commit();
+
+            }
+        });
        return view;
     }
 }

@@ -16,6 +16,31 @@ public class enqueryOptions extends Fragment {
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_enquiry_options,container,false);
 
+        ImageView opnenquery = view.findViewById(R.id.opnenquery);
+        ImageView enquirybackbutton = view.findViewById(R.id.enquiryoptionbackBtn);
+
+        enquirybackbutton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.contrainer,new calenderFM());
+
+                fragmentTransaction.commit();
+            }
+        });
+
+
+
+        opnenquery.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
+                fragmentTransaction.replace(R.id.contrainer,new EnqueryList());
+
+                fragmentTransaction.commit();
+            }
+        });
+
         return view;
     }
 

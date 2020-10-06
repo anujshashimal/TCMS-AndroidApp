@@ -1,45 +1,46 @@
 package com.example.tcmsapp;
 
 import android.os.Bundle;
+
+import androidx.cardview.widget.CardView;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
-
-public class EnqueryList extends Fragment {
+public class select_staff_member extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        final View view = inflater.inflate(R.layout.enquiry_list,container,false);
 
-        ImageView opnenquery = view.findViewById(R.id.messagebutton);
-        ImageView enquirylistbackbtn = view.findViewById(R.id.enquirylistbackbtn);
+        final View view = inflater.inflate(R.layout.fragment_select_staff_member,container,false);
 
-        enquirylistbackbtn.setOnClickListener(new View.OnClickListener() {
+       CardView card1 = view.findViewById(R.id.cardview1);
+        ImageView selectstaffmember = view.findViewById(R.id.selectstaffmemberbackbtn);
+
+
+        selectstaffmember.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.contrainer,new enqueryOptions());
+                fragmentTransaction.replace(R.id.contrainer,new staffMain());
 
                 fragmentTransaction.commit();
             }
         });
-
-        opnenquery.setOnClickListener(new View.OnClickListener() {
+        card1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 FragmentTransaction fragmentTransaction = getFragmentManager().beginTransaction();
-                fragmentTransaction.replace(R.id.contrainer,new Broadcast_sms());
-
+                fragmentTransaction.replace(R.id.contrainer,new salaryHistory());
                 fragmentTransaction.commit();
             }
         });
 
         return view;
     }
-
 }
