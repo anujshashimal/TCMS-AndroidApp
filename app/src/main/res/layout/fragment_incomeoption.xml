@@ -40,7 +40,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Income Options"
-                            android:textSize="30dp"
+                            android:textSize="25dp"
                             android:layout_gravity="center_horizontal"
                             android:textAlignment="center"
 
@@ -98,7 +98,7 @@
                                     android:layout_width="133dp"
                                     android:layout_height="136dp"
                                     android:layout_margin="10dp"
-                                    android:src="@drawable/optioniicon" />
+                                    android:src="@drawable/addincome" />
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -111,7 +111,7 @@
                                     android:paddingTop="50dp"
                                     android:text="Add income"
                                     android:textAlignment="center"
-                                    android:textSize="30dp"
+                                    android:textSize="25dp"
                                     />
 
                             </LinearLayout>
@@ -134,7 +134,7 @@
                                     android:layout_width="143dp"
                                     android:layout_height="129dp"
                                     android:layout_margin="10dp"
-                                    android:src="@drawable/optioneicon" />
+                                    android:src="@drawable/incomerport" />
                                 <LinearLayout
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
                                     android:paddingTop="50dp"
                                     android:text="Income report"
                                     android:textAlignment="center"
-                                    android:textSize="30dp" />
+                                    android:textSize="25dp" />
 
                             </LinearLayout>
 
